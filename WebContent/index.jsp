@@ -12,6 +12,21 @@
 		<tr>
 			<td><a href="pages/capturarExcecoes.jsp">Capturar Exceções</a></td>	
 		</tr>
+		<tr>
+			<td><a href="pages/acessoAoSistema.jsp">Acessar Sistema</a></td>
+		</tr>
+		<tr>
+			<td><a href="pages/paginaPai.jsp">Load Page Jquery</a></td>
+		</tr>
+		<tr>
+			<td><a href="pages/progressBar.jsp">Progress Bar</a></td>
+		</tr>
+		<tr>
+			<td><a href="pages/upload.jsp">Upload</a></td>
+		</tr>
+		<tr>
+			<td><a href="pages/ServletAutenticacao?deslogar=true">Deslogar</a></td>
+		</tr>
 		
 	
 	
