@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,27 +17,30 @@
 		var target = document.querySelector("img");
 		var file = document.querySelector("input[type=file]").files[0];
 		var reader = new FileReader();
-		
+
 		reader.onloadend = function() {
 			target.src = reader.result;
-		};
-		
-		if(file){
-			reader.readAsDataURL(file);
 			
+
 			//upload Ajax
-			
+
 			$.ajax({
 				method : "POST",
 				url : "fileUpload",
-				data : {fileUpload : target.src}
+				data : {
+					fileUpload : reader.result
+				}
 			}).done(function(response) {
-				alert("Sucesso: "+ response);
+				alert("Sucesso: " + response);
 			}).fail(function(xhr, status, errorThrown) {
-				alert("Error: "+ xhr.responseText);
+				alert("Error: " + xhr.responseText);
 			});
-			
-		}else{
+		};
+
+		if (file) {
+			reader.readAsDataURL(file);
+
+		} else {
 			target.src = "";
 		}
 	}

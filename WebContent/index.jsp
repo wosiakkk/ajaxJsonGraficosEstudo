@@ -25,6 +25,9 @@
 			<td><a href="pages/upload.jsp">Upload</a></td>
 		</tr>
 		<tr>
+			<td><a href="pages/dataTable.jsp">DataTable</a></td>
+		</tr>
+		<tr>
 			<td><a href="pages/ServletAutenticacao?deslogar=true">Deslogar</a></td>
 		</tr>
 		
