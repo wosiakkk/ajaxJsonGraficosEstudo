@@ -15,12 +15,9 @@
 	<table id="minhaTabela" class="display" style="width: 100%">
 		<thead>
 			<tr>
-				<th>Name</th>
-				<th>Position</th>
-				<th>Office</th>
-				<th>Age</th>
-				<th>Start date</th>
-				<th>Salary</th>
+				<th>ID</th>
+				<th>Login</th>
+				<th>Senha</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -32,7 +29,7 @@
 $(document).ready(function() { // faz o processamento na hora em que abre a tela
     $('#minhaTabela').DataTable( {
         "processing": true,
-        "serverSide": true,
+        "serverSide": false,
         "ajax": "sevletDataTable" // URL de retorno dos dados do servidor(resposta do servidor)
     } );
 } );

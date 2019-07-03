@@ -1,6 +1,7 @@
-package Filter;
+package filter;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -14,13 +15,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import User.UserLogado;
+import connection.ConnectionDataBase;
+import user.UserLogado;
 
 // delimita qual página o filtro ndeve interceptar, se for '/*' todas as páginas do sistema serão interceptadas
 //no caso estmaos capturando para todas páginas dentro do diretório pages
 @WebFilter(urlPatterns = {"/pages/*"})
 public class FilterAutenticacao implements Filter {
 
+	//classe para conexão ao BD
+	private static Connection connection;
+	
 	//faz alguma coisa quando a aplicação é derrubada
 	@Override
 	public void destroy() {
@@ -60,8 +65,8 @@ public class FilterAutenticacao implements Filter {
 	//executa alguma coisa quando a aaplicação é iniciada
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		// TODO Auto-generated method stub
-		Filter.super.init(filterConfig);
+		//realizando a conexão com o bd ao iniciar a aplicação
+		connection = ConnectionDataBase.getConnection();
 	}
 
 }
